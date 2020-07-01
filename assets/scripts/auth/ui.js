@@ -1,16 +1,13 @@
 'use strict'
 
 const store = require('./../store')
-
+const plant = require('./../plant/events')
 // $('#sign-out-banner').hide()
 // $('#sign-out').hide()
 // $('#start-new-game-banner').hide()
 // $('#start-new-game').hide()
 // $('#change-password-banner').hide()
 // $('#change-password').hide()
-// $('#game-board').hide()
-// $('#game-index-banner').hide()
-// $('#game-index').hide()
 
 const createSuccess = function (responseData) {
   $('form').trigger('reset')
@@ -34,6 +31,7 @@ const signInSuccess = function (responseData) {
   $('#message').show()
   $('#message').removeClass().addClass('success')
   store.user = responseData.user
+  plant.onPlantIndex() // show plant index on signin
   // $('#sign-up').hide()
   // $('#sign-up-banner').hide()
   // $('#sign-in').hide()
@@ -42,11 +40,6 @@ const signInSuccess = function (responseData) {
   // $('#sign-out').show()
   // $('#change-password-banner').show()
   // $('#change-password').show()
-  // $('#start-new-game-banner').show()
-  // $('#start-new-game').show()
-  // $('#status-message').text('Hello!')
-  // $('#game-index-banner').show()
-  // $('#game-index').show()
 }
 
 const signInFailure = function () {
@@ -75,7 +68,6 @@ const signOutSuccess = function (responseData) {
   $('#message').text('Sign Out Successful!')
   $('#message').show()
   $('#message').removeClass().addClass('success')
-  // $('#game-board').hide()
   // $('#sign-up').show()
   // $('#sign-up-banner').show()
   // $('#sign-in').show()
@@ -87,8 +79,6 @@ const signOutSuccess = function (responseData) {
   // $('#change-password-banner').hide()
   // $('#change-password').hide()
   // $('#status-message').text('Bye!')
-  // $('#game-index-banner').hide()
-  // $('#game-index').hide()
   store.user = null
 }
 
@@ -97,20 +87,6 @@ const signOutFailure = function () {
   $('#message').text('Sign Out Failed :(')
   $('#message').show().removeClass().addClass('failure')
 }
-
-// const startNewGameSuccess = function (responseData) {
-//   $('form').trigger('reset')
-//
-//   $('#message').text('New Game Started!')
-//   $('#message').show()
-//   $('#message').removeClass().addClass('success')
-// }
-
-// const startNewGameFailure = function () {
-//   $('form').trigger('reset')
-//   $('#message').text('New Game Failed')
-//   $('#message').show().removeClass().addClass('failure')
-// }
 
 module.exports = {
   createSuccess: createSuccess,
@@ -121,6 +97,4 @@ module.exports = {
   changePasswordFailure: changePasswordFailure,
   signOutSuccess: signOutSuccess,
   signOutFailure: signOutFailure
-  // startNewGameSuccess: startNewGameSuccess,
-  // startNewGameFailure: startNewGameFailure
 }

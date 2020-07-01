@@ -1,0 +1,20 @@
+{{#each plants as |plant|}}
+  {{log plant}}
+  <section data-id="{{plant.id}}"> <!--like data index-->
+    <h6>Name:</h6>
+    <h3>
+      {{limit plant.commonName 15}}
+    </h3>
+    <h6>Water Requirements:</h6>
+    <p>
+      {{#if plant.waterReq}}
+        {{plant.waterReq}}
+      {{else}}
+        No requirements provided.
+      {{/if}}
+    </p>
+    <!-- {{> partial}}
+    <button class="remove-book btn btn-danger" data-id="{{plant.id}}">Delete</button> -->
+  </section>
+
+{{/each}}
