@@ -12,63 +12,27 @@ const plantIndex = function () {
   })
 }
 
-// const signUp = function (formData) {
-//   return $.ajax({
-//     url: config.apiUrl + '/sign-up/',
-//     method: 'POST',
-//     data: {
-//       credentials: {
-//         email: formData.credentials.email,
-//         password: formData.credentials.password,
-//         password_confirmation: formData.credentials.password_confirmation
-//       }
-//     }
-//   })
-// }
-//
-// const signIn = function (formData) {
-//   return $.ajax({
-//     url: config.apiUrl + '/sign-in',
-//     method: 'POST',
-//     data: {
-//       credentials: {
-//         email: formData.credentials.email,
-//         password: formData.credentials.password
-//       }
-//     }
-//   })
-// }
-//
-// const changePassword = function (formData) {
-//   return $.ajax({
-//     method: 'PATCH',
-//     url: config.apiUrl + '/change-password',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     },
-//     data: {
-//       passwords: {
-//         old: formData.passwords.old,
-//         new: formData.passwords.new
-//       }
-//     }
-//   })
-// }
-//
-// const signOut = function (formData) {
-//   return $.ajax({
-//     method: 'DELETE',
-//     url: config.apiUrl + '/sign-out',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     }
-//   })
-// }
+const plantCreate = function (formData) {
+  return $.ajax({
+    url: config.apiUrl + '/plants',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+      plant: {
+        commonName: formData.plant.commonName,
+        speciesName: formData.plant.speciesName,
+        nickName: formData.plant.nickName,
+        waterReq: formData.plant.waterReq,
+        sunReq: formData.plant.sunReq,
+        soilReq: formData.plant.soilReq
+      }
+    }
+  })
+}
 
 module.exports = {
-  plantIndex: plantIndex
-  // signUp: signUp,
-  // signIn: signIn,
-  // changePassword: changePassword,
-  // signOut: signOut
+  plantIndex: plantIndex,
+  plantCreate: plantCreate
 }

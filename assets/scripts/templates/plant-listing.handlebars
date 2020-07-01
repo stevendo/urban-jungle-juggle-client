@@ -3,7 +3,7 @@
   <section data-id="{{plant.id}}"> <!--like data index-->
     <h6>Name:</h6>
     <h3>
-      {{limit plant.commonName 15}}
+      {{plant.commonName}}
     </h3>
     <h6>Water Requirements:</h6>
     <p>
@@ -13,8 +13,7 @@
         No requirements provided.
       {{/if}}
     </p>
-    <!-- {{> partial}}
-    <button class="remove-book btn btn-danger" data-id="{{plant.id}}">Delete</button> -->
+
   </section>
 
 {{/each}}

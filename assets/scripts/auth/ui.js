@@ -31,7 +31,7 @@ const signInSuccess = function (responseData) {
   $('#message').show()
   $('#message').removeClass().addClass('success')
   store.user = responseData.user
-  plant.onPlantIndex() // show plant index on signin
+  // plant.onPlantIndex() // show plant index on signin
   // $('#sign-up').hide()
   // $('#sign-up-banner').hide()
   // $('#sign-in').hide()

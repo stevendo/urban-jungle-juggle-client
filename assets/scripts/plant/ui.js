@@ -16,7 +16,24 @@ const indexFailure = function () {
   $('#message').show().removeClass().addClass('failure')
 }
 
+const plantCreateSuccess = function (responseData) {
+  $('form').trigger('reset')
+
+  $('#message').text('Plant created successfully!')
+  $('#message').show()
+  $('#message').removeClass().addClass('success')
+}
+
+const plantCreateFailure = function () {
+  $('form').trigger('reset')
+
+  $('#message').text('Plant Create Failed')
+  $('#message').show().removeClass().addClass('failure')
+}
+
 module.exports = {
   indexSuccess: indexSuccess,
-  indexFailure: indexFailure
+  indexFailure: indexFailure,
+  plantCreateSuccess: plantCreateSuccess,
+  plantCreateFailure: plantCreateFailure
 }
