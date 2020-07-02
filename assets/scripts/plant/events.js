@@ -32,20 +32,31 @@ const onPlantUpdate = function (event) {
   const form = event.target
   const data = getFormFields(form)
 
-  console.log('what is event', event)
-  console.log('what is data', data)
-  console.log(event.target, 'what is event.target')
-  console.log(event.currentTarget, 'what is currentTarget')
-  console.log(plantId, 'what is plantId')
-  console.log($(event.target).data('id'), 'what is eventtargetdata')
+  // console.log('what is event', event)
+  // console.log('what is data', data)
+  // console.log(event.target, 'what is event.target')
+  // console.log(event.currentTarget, 'what is currentTarget')
+  // console.log(plantId, 'what is plantId')
+  // console.log($(event.target).data('id'), 'what is eventtargetdata')
 
   api.plantUpdate(data, plantId)
     .then(ui.plantUpdateSuccess)
     .catch(ui.plantUpdateFailure)
 }
 
+const onPlantRemove = function (event) {
+  event.preventDefault()
+
+  const plantId = $(event.target).data('id')
+
+  api.plantRemove(plantId)
+    .then(ui.plantRemoveSuccess)
+    .catch(ui.plantRemoveFailure)
+}
+
 module.exports = {
   onPlantIndex: onPlantIndex,
   onPlantCreate: onPlantCreate,
-  onPlantUpdate: onPlantUpdate
+  onPlantUpdate: onPlantUpdate,
+  onPlantRemove: onPlantRemove
 }

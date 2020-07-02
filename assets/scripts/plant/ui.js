@@ -44,11 +44,24 @@ const plantUpdateFailure = function () {
   $('#message').show().removeClass().addClass('failure')
 }
 
+const plantRemoveSuccess = function (responseData) {
+  $('#message').text('Plant removed successfully!')
+  $('#message').show()
+  $('#message').removeClass().addClass('success')
+}
+
+const plantRemoveFailure = function () {
+  $('#message').text('Plant Remove Failed')
+  $('#message').show().removeClass().addClass('failure')
+}
+
 module.exports = {
   indexSuccess: indexSuccess,
   indexFailure: indexFailure,
   plantCreateSuccess: plantCreateSuccess,
   plantCreateFailure: plantCreateFailure,
   plantUpdateSuccess: plantUpdateSuccess,
-  plantUpdateFailure: plantUpdateFailure
+  plantUpdateFailure: plantUpdateFailure,
+  plantRemoveSuccess: plantRemoveSuccess,
+  plantRemoveFailure: plantRemoveFailure
 }

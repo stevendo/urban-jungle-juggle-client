@@ -32,6 +32,16 @@ const plantCreate = function (formData) {
   })
 }
 
+const plantRemove = function (plantId) {
+  return $.ajax({
+    url: config.apiUrl + '/plants/' + plantId,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 const plantUpdate = function (data, plantId) {
   return $.ajax({
     method: 'PATCH',
@@ -55,5 +65,6 @@ const plantUpdate = function (data, plantId) {
 module.exports = {
   plantIndex: plantIndex,
   plantCreate: plantCreate,
-  plantUpdate: plantUpdate
+  plantUpdate: plantUpdate,
+  plantRemove: plantRemove
 }
