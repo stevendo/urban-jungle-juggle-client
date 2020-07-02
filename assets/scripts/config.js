@@ -2,7 +2,7 @@
 
 let apiUrl
 const apiUrls = {
-  production: 'https://polar-tundra-79343.herokuapp.com/', // from heroku
+  production: 'https://polar-tundra-79343.herokuapp.com', // from heroku
   development: 'http://localhost:4741'
 }
 
