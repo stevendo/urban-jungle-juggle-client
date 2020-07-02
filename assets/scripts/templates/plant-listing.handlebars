@@ -1,6 +1,6 @@
 {{#each plants as |plant|}}
   {{log plant}}
-  <section data-id="{{plant.id}}"> <!--like data index-->
+  <section data-id="{{plant._id}}"> <!--like data index-->
     <h6>Name:</h6>
     <h3>
       {{plant.commonName}}
@@ -14,6 +14,25 @@
       {{/if}}
     </p>
 
+    <section id="update-plant-section">
+      <h3>Update Plant</h3>
+      <form class="update-plant-form" data-id="{{plant._id}}">
+        <p>Common Name</p>
+        <input required type="text" placeholder="Common Name" name="plant[commonName]">
+        <p>Species Name</p>
+        <input required type="text" placeholder="Species Name" name="plant[speciesName]">
+        <p>Nick Name</p>
+        <input required type="text" placeholder="Nick Name" name="plant[nickName]">
+        <p>Water Requirements</p>
+        <input required type="text" placeholder="Water Requirements" name="plant[waterReq]">
+        <p>Sun Requirements</p>
+        <input required type="text" placeholder="Sun Requirements" name="plant[sunReq]">
+        <p>Soil Requirements</p>
+        <input required type="text" placeholder="Soil Requirements" name="plant[soilReq]">
+        <button type='submit' class="update-plant">Update</button>
+      </form>
+
+    </section>
   </section>
 
 {{/each}}

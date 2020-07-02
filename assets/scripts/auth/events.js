@@ -2,6 +2,7 @@
 
 const api = require('./api')
 const ui = require('./ui')
+const plant = require('./../plant/events')
 
 const getFormFields = require('../../../lib/get-form-fields.js')
 
@@ -24,6 +25,7 @@ const onSignIn = function (event) {
 
   api.signIn(data)
     .then(ui.signInSuccess)
+    // .then(plant.onPlantIndex)
     .catch(ui.signInFailure)
 }
 

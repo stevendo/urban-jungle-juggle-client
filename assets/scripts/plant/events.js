@@ -24,7 +24,28 @@ const onPlantCreate = function (event) {
     .catch(ui.plantCreateFailure)
 }
 
+const onPlantUpdate = function (event) {
+  event.preventDefault()
+
+  const plantId = $(event.target).data('id')
+
+  const form = event.target
+  const data = getFormFields(form)
+
+  console.log('what is event', event)
+  console.log('what is data', data)
+  console.log(event.target, 'what is event.target')
+  console.log(event.currentTarget, 'what is currentTarget')
+  console.log(plantId, 'what is plantId')
+  console.log($(event.target).data('id'), 'what is eventtargetdata')
+
+  api.plantUpdate(data, plantId)
+    .then(ui.plantUpdateSuccess)
+    .catch(ui.plantUpdateFailure)
+}
+
 module.exports = {
   onPlantIndex: onPlantIndex,
-  onPlantCreate: onPlantCreate
+  onPlantCreate: onPlantCreate,
+  onPlantUpdate: onPlantUpdate
 }

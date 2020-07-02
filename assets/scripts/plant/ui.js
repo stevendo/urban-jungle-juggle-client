@@ -4,10 +4,10 @@ const showPlantsTemplate = require('../templates/plant-listing.handlebars')
 const store = require('./../store')
 
 const indexSuccess = function (data) {
-  console.log(data)
   store.plants = data.plants
   const showPlantsHtml = showPlantsTemplate({plants: data.plants})
   $('.content').append(showPlantsHtml)
+  console.log(store.plants)
 }
 
 const indexFailure = function () {
@@ -31,9 +31,24 @@ const plantCreateFailure = function () {
   $('#message').show().removeClass().addClass('failure')
 }
 
+const plantUpdateSuccess = function (responseData) {
+  $('form').trigger('reset')
+  $('#message').text('Plant Updated!')
+  $('#message').show()
+  $('#message').removeClass().addClass('success')
+}
+
+const plantUpdateFailure = function () {
+  $('form').trigger('reset')
+  $('#message').text('Plant Update Failed :(')
+  $('#message').show().removeClass().addClass('failure')
+}
+
 module.exports = {
   indexSuccess: indexSuccess,
   indexFailure: indexFailure,
   plantCreateSuccess: plantCreateSuccess,
-  plantCreateFailure: plantCreateFailure
+  plantCreateFailure: plantCreateFailure,
+  plantUpdateSuccess: plantUpdateSuccess,
+  plantUpdateFailure: plantUpdateFailure
 }

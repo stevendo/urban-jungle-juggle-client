@@ -32,7 +32,28 @@ const plantCreate = function (formData) {
   })
 }
 
+const plantUpdate = function (data, plantId) {
+  return $.ajax({
+    method: 'PATCH',
+    url: config.apiUrl + '/plants/' + plantId,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+      plant: {
+        commonName: data.plant.commonName,
+        speciesName: data.plant.speciesName,
+        nickName: data.plant.nickName,
+        waterReq: data.plant.waterReq,
+        sunReq: data.plant.sunReq,
+        soilReq: data.plant.soilReq
+      }
+    }
+  })
+}
+
 module.exports = {
   plantIndex: plantIndex,
-  plantCreate: plantCreate
+  plantCreate: plantCreate,
+  plantUpdate: plantUpdate
 }
