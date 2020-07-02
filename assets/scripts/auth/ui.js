@@ -2,12 +2,14 @@
 
 const store = require('./../store')
 const plant = require('./../plant/events')
-// $('#sign-out-banner').hide()
-// $('#sign-out').hide()
-// $('#start-new-game-banner').hide()
-// $('#start-new-game').hide()
-// $('#change-password-banner').hide()
-// $('#change-password').hide()
+
+$('#sign-out-banner').hide()
+$('#sign-out').hide()
+$('#change-password-banner').hide()
+$('#change-password').hide()
+$('#content').hide()
+$('#create-plant-section').hide()
+$('#get-plants-section').hide()
 
 const createSuccess = function (responseData) {
   $('form').trigger('reset')
@@ -32,14 +34,15 @@ const signInSuccess = function (responseData) {
   $('#message').removeClass().addClass('success')
   store.user = responseData.user
   // plant.onPlantIndex() // show plant index on signin
-  // $('#sign-up').hide()
-  // $('#sign-up-banner').hide()
-  // $('#sign-in').hide()
-  // $('#sign-in-banner').hide()
-  // $('#sign-out-banner').show()
-  // $('#sign-out').show()
-  // $('#change-password-banner').show()
-  // $('#change-password').show()
+  $('#sign-up').hide()
+  $('#sign-up-banner').hide()
+  $('#sign-in').hide()
+  $('#sign-in-banner').hide()
+  $('#sign-out').show()
+  $('#change-password-banner').show()
+  $('#change-password').show()
+  $('#get-plants-section').show()
+  $('#create-plant-section').show()
 }
 
 const signInFailure = function () {
@@ -63,22 +66,21 @@ const changePasswordFailure = function () {
 }
 
 const signOutSuccess = function (responseData) {
-  $('form').trigger('reset')
+  // $('form').trigger('reset')
 
   $('#message').text('Sign Out Successful!')
   $('#message').show()
   $('#message').removeClass().addClass('success')
-  // $('#sign-up').show()
-  // $('#sign-up-banner').show()
-  // $('#sign-in').show()
-  // $('#sign-in-banner').show()
-  // $('#sign-out-banner').hide()
-  // $('#sign-out').hide()
-  // $('#start-new-game-banner').hide()
-  // $('#start-new-game').hide()
-  // $('#change-password-banner').hide()
-  // $('#change-password').hide()
-  // $('#status-message').text('Bye!')
+  $('#content').hide()
+  $('#sign-up').show()
+  $('#sign-up-banner').show()
+  $('#sign-in').show()
+  $('#sign-in-banner').show()
+  $('#sign-out-banner').hide()
+  $('#sign-out').hide()
+  $('#change-password-banner').hide()
+  $('#change-password').hide()
+  $('#status-message').text('Bye!')
   store.user = null
 }
 

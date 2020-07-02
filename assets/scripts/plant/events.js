@@ -50,9 +50,11 @@ const onPlantRemove = function (event) {
   const plantId = $(event.target).data('id')
 
   api.plantRemove(plantId)
-    .then(ui.plantRemoveSuccess)
+    .then(() => ui.plantRemoveSuccess(plantId))
     .catch(ui.plantRemoveFailure)
 }
+
+// .then(() => ui.deleteBookSuccess(id))
 
 module.exports = {
   onPlantIndex: onPlantIndex,

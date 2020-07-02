@@ -7,7 +7,11 @@ const indexSuccess = function (data) {
   store.plants = data.plants
   const showPlantsHtml = showPlantsTemplate({plants: data.plants})
   $('.content').append(showPlantsHtml)
-  console.log(store.plants)
+  $('#content').show()
+
+  $('#message').text('Plant Indexed successfully!')
+  $('#message').show()
+  $('#message').removeClass().addClass('success')
 }
 
 const indexFailure = function () {
@@ -44,10 +48,12 @@ const plantUpdateFailure = function () {
   $('#message').show().removeClass().addClass('failure')
 }
 
-const plantRemoveSuccess = function (responseData) {
+const plantRemoveSuccess = function (plantId) {
   $('#message').text('Plant removed successfully!')
   $('#message').show()
   $('#message').removeClass().addClass('success')
+  $(`[data-id="${plantId}"]`).remove()
+  console.log('what is plantId', plantId)
 }
 
 const plantRemoveFailure = function () {
