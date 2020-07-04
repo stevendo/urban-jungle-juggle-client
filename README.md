@@ -5,7 +5,9 @@ As urban jungles continue to trend, people will continue to collect rarer and mo
 Users will be able to add, update, and remove plants from their database as their urban jungle evolves.
 
 ## Planning Story
-This app began with simple sketches. As the database features evolved and new technologies became more familiar, the layout evolved. MongoDB/Mongoose stands as the foundation of the database.
+This app began with simple sketches. A skeleton of the app was built with simple html elements.
+
+As the features developed the html structure was adjusted and as new technologies became more familiar, the layout evolved even further.
 
 
  ## User Stories
@@ -34,3 +36,5 @@ This app began with simple sketches. As the database features evolved and new te
 [Imgur](https://imgur.com/bra9h1r)
 
 ## Links
+[Github](https://stevendo.github.io/urban-jungle-juggle-client/)
+[Heroku](https://git.heroku.com/polar-tundra-79343.git)
