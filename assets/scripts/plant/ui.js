@@ -38,6 +38,7 @@ const plantCreateFailure = function () {
 
 const plantUpdateSuccess = function (responseData) {
   $('form').trigger('reset')
+
   $('#message').text('Plant Updated!')
   $('#message').show()
   $('#message').removeClass().addClass('success')
@@ -45,6 +46,7 @@ const plantUpdateSuccess = function (responseData) {
 
 const plantUpdateFailure = function () {
   $('form').trigger('reset')
+
   $('#message').text('Plant Update Failed :(')
   $('#message').show().removeClass().addClass('failure')
 }
@@ -53,6 +55,7 @@ const plantRemoveSuccess = function (plantId) {
   $('#message').text('Plant removed successfully!')
   $('#message').show()
   $('#message').removeClass().addClass('success')
+
   $(`[data-id="${plantId}"]`).remove()
   // console.log('what is plantId', plantId)
 }

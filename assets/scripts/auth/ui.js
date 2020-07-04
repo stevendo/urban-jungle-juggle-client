@@ -8,6 +8,7 @@ $('.sign-out').hide()
 $('#change-password').hide()
 
 $('#content').hide()
+$('#create-plant').hide()
 
 const createSuccess = function (responseData) {
   $('form').trigger('reset')
@@ -46,6 +47,7 @@ const signInSuccess = function (responseData) {
   $('.index-plants').show()
 
   $('#create-plant').show()
+  $('#content').show()
 
   $('#status-message').text('Hello!')
 }
