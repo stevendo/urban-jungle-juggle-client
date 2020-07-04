@@ -30,11 +30,11 @@ As the features developed the html structure was adjusted and as new technologie
 * Future versions will have significant UI/UX enhancements overall
 
 ## Images
-[Imgur](https://imgur.com/GG27eTt)
-[Imgur](https://imgur.com/1WDvUA1)
-[Imgur](https://imgur.com/rSrBRmU)
-[Imgur](https://imgur.com/bra9h1r)
+[Wireframes](https://imgur.com/GG27eTt)
+[Wireframes](https://imgur.com/1WDvUA1)
+[Wireframes](https://imgur.com/rSrBRmU)
+[Wireframes](https://imgur.com/bra9h1r)
 
 ## Links
-[Github](https://stevendo.github.io/urban-jungle-juggle-client/)
-[Heroku](https://git.heroku.com/polar-tundra-79343.git)
+[Deployed Github](https://stevendo.github.io/urban-jungle-juggle-client/)
+[Deployed Heroku](https://git.heroku.com/polar-tundra-79343.git)
