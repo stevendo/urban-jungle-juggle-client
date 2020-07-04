@@ -9,11 +9,12 @@ const plantEvents = require('./plant/events')
 // require('./example')
 
 $(() => {
-  $('#sign-up').on('submit', authEvents.onSignUp)
-  $('#sign-in').on('submit', authEvents.onSignIn)
-  $('#change-password').on('submit', authEvents.onChangePassword)
-  $('#sign-out').on('click', authEvents.onSignOut)
-  $('#getPlantsButton').on('click', plantEvents.onPlantIndex)
+  $('.sign-up').on('submit', authEvents.onSignUp)
+  $('.sign-in').on('submit', authEvents.onSignIn)
+  $('.change-password').on('submit', authEvents.onChangePassword)
+  $('.sign-out').on('click', authEvents.onSignOut)
+
+  $('.indexPlants').on('click', plantEvents.onPlantIndex)
   $('#create-plant').on('submit', plantEvents.onPlantCreate)
   $('.content').on('submit', '.update-plant-form', plantEvents.onPlantUpdate)
   $('.content').on('click', '.remove-plant', plantEvents.onPlantRemove)

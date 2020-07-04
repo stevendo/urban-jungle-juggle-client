@@ -1,5 +1,5 @@
 body {
-  background: lighten($info, 50%);
+  background: $white($info, 50%);
   min-height: 100vh;
   padding: 5rem 0 1rem;
 }
@@ -56,4 +56,10 @@ nav {
     @extend .h1;
     margin-bottom: 0;
   }
+}
+
+// Academind
+.form {
+  width: 450px;
+  margin: auto;
 }

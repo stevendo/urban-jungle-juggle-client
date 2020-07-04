@@ -6,6 +6,7 @@ const store = require('./../store')
 const indexSuccess = function (data) {
   store.plants = data.plants
   const showPlantsHtml = showPlantsTemplate({plants: data.plants})
+  $('.content').empty()
   $('.content').append(showPlantsHtml)
   $('#content').show()
 
@@ -53,7 +54,7 @@ const plantRemoveSuccess = function (plantId) {
   $('#message').show()
   $('#message').removeClass().addClass('success')
   $(`[data-id="${plantId}"]`).remove()
-  console.log('what is plantId', plantId)
+  // console.log('what is plantId', plantId)
 }
 
 const plantRemoveFailure = function () {

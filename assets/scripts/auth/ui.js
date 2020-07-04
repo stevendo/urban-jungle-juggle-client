@@ -3,13 +3,11 @@
 const store = require('./../store')
 const plant = require('./../plant/events')
 
-$('#sign-out-banner').hide()
-$('#sign-out').hide()
-$('#change-password-banner').hide()
+$('.index-plants').hide()
+$('.sign-out').hide()
 $('#change-password').hide()
+
 $('#content').hide()
-$('#create-plant-section').hide()
-$('#get-plants-section').hide()
 
 const createSuccess = function (responseData) {
   $('form').trigger('reset')
@@ -17,7 +15,8 @@ const createSuccess = function (responseData) {
   $('#message').text('Sign up successfully!')
   $('#message').show()
   $('#message').removeClass().addClass('success')
-  // $('#status-message').text('Hello!')
+
+  $('#status-message').text('Hello!')
 }
 
 const createFailure = function () {
@@ -29,24 +28,31 @@ const createFailure = function () {
 
 const signInSuccess = function (responseData) {
   $('form').trigger('reset')
+
   $('#message').text('Sign in successfully!')
   $('#message').show()
   $('#message').removeClass().addClass('success')
+
   store.user = responseData.user
+
+  // console.log(responseData, 'what is responseData')
   // plant.onPlantIndex() // show plant index on signin
+
   $('#sign-up').hide()
-  $('#sign-up-banner').hide()
   $('#sign-in').hide()
-  $('#sign-in-banner').hide()
-  $('#sign-out').show()
-  $('#change-password-banner').show()
+  $('.sign-out').show()
+
   $('#change-password').show()
-  $('#get-plants-section').show()
-  $('#create-plant-section').show()
+  $('.index-plants').show()
+
+  $('#create-plant').show()
+
+  $('#status-message').text('Hello!')
 }
 
 const signInFailure = function () {
   $('form').trigger('reset')
+
   $('#message').text('Sign in Failed :(')
   $('#message').show().removeClass().addClass('failure')
 }
@@ -61,25 +67,27 @@ const changePasswordSuccess = function (responseData) {
 
 const changePasswordFailure = function () {
   $('form').trigger('reset')
+
   $('#message').text('Change Password Failed :(')
   $('#message').show().removeClass().addClass('failure')
 }
 
 const signOutSuccess = function (responseData) {
-  // $('form').trigger('reset')
-
   $('#message').text('Sign Out Successful!')
   $('#message').show()
   $('#message').removeClass().addClass('success')
-  $('#content').hide()
+
   $('#sign-up').show()
-  $('#sign-up-banner').show()
   $('#sign-in').show()
-  $('#sign-in-banner').show()
-  $('#sign-out-banner').hide()
-  $('#sign-out').hide()
-  $('#change-password-banner').hide()
+
+  $('.index-plants').hide()
+  $('.sign-out').hide()
+
   $('#change-password').hide()
+  $('#create-plant').hide()
+
+  $('#content').hide()
+
   $('#status-message').text('Bye!')
   store.user = null
 }
