@@ -30,11 +30,13 @@ const createFailure = function () {
 const signInSuccess = function (responseData) {
   $('form').trigger('reset')
 
-  $('#message').text('Sign in successfully!')
+  store.user = responseData.user
+
+  $('#message').text('Signed in as ' + store.user.email)
   $('#message').show()
   $('#message').removeClass().addClass('success')
 
-  store.user = responseData.user
+  // store.user = responseData.user
 
   $('#sign-up').hide()
   $('#sign-in').hide()

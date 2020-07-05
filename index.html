@@ -24,7 +24,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navBarMenu">
+        <!-- <div class="collapse navbar-collapse" id="navBarMenu">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
               <a href="#" class="nav-link index-plants">Show Plants</a>
@@ -32,6 +32,137 @@
             <li class="nav-item">
               <a href="#" class="nav-link sign-out">Sign Out</a>
             </li>
+          </ul>
+        </div> -->
+
+        <!-- <ul class="nav nav-pills" id="create-plant">
+
+          <li class="nav-item dropdown">
+
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Add Plant</a>
+
+            <div class="dropdown-menu dropdown-menu-left">
+
+              <form action="" class="create-plant form">
+                <div class="form-group">
+                  <label for="nick-name">Nick Name</label>
+                  <input required type="text" name="plant[nickName]" class="form-control form">
+                </div>
+
+                <div class="form-group">
+                  <label for="common-name">Common Name</label>
+                  <input required type="text" name="plant[commonName]" class="form-control form">
+                </div>
+
+                <div class="form-group">
+                  <label for="species-name">Species Name</label>
+                  <input required type="text" name="plant[speciesName]" class="form-control form">
+                </div>
+
+                <div class="form-group">
+                  <label for="water-requirements">Water Requirements</label>
+                <input required type="text" name="plant[waterReq]" class="form-control form">
+                </div>
+
+                <div class="form-group">
+                  <label for="sun-requirements">Sun Requirements</label>
+                  <input required type="text" name="plant[sunReq]" class="form-control form">
+                </div>
+
+                <div class="form-group">
+                  <label for="soil-requirements">Soil Requirements</label>
+                  <input required type="text" name="plant[soilReq]" class="form-control form">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+              </form>
+            </div>
+          </li>
+        </ul> -->
+
+        <div class="collapse navbar-collapse" id="navBarMenu">
+          <ul class="navbar-nav ml-auto">
+
+            <!-- <li class="nav-item">
+              <a href="#" class="nav-link index-plants">Show Plants</a>
+            </li> -->
+
+            <li class="nav-item dropdown" id="create-plant">
+
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Add Plant</a>
+
+              <div class="dropdown-menu dropdown-menu-right">
+
+                <form action="" class="create-plant form">
+                  <div class="form-group">
+                    <label for="nick-name">Nick Name</label>
+                    <input required type="text" name="plant[nickName]" class="form-control form">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="common-name">Common Name</label>
+                    <input required type="text" name="plant[commonName]" class="form-control form">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="species-name">Species Name</label>
+                    <input required type="text" name="plant[speciesName]" class="form-control form">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="water-requirements">Water Requirements</label>
+                  <input required type="text" name="plant[waterReq]" class="form-control form">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="sun-requirements">Sun Requirements</label>
+                    <input required type="text" name="plant[sunReq]" class="form-control form">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="soil-requirements">Soil Requirements</label>
+                    <input required type="text" name="plant[soilReq]" class="form-control form">
+                  </div>
+
+                  <button type="submit" class="btn btn-primary">Submit</button>
+
+                </form>
+
+              </div>
+
+            </li>
+
+            <li class="nav-item dropdown" id="change-password">
+
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Change Password</a>
+
+              <div class="dropdown-menu dropdown-menu-right">
+
+                <form action="" class="change-password form">
+
+                  <div class="form-group">
+                    <label for="password">Old Password</label>
+                    <input required type="password" name="passwords[old]" class="form-control">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="password">New Password</label>
+                    <input required type="password" name="passwords[new]" class="form-control">
+                  </div>
+
+                  <button type="submit" class="btn btn-primary">Submit</button>
+
+                </form>
+
+              </div>
+
+            </li>
+
+            <li class="nav-item">
+              <a href="#" class="nav-link sign-out">Sign Out</a>
+            </li>
+
           </ul>
         </div>
 
@@ -94,7 +225,7 @@
 
       <!-- // Change Password // -->
 
-      <section id="change-password">
+      <!-- <section id="change-password">
         <p class="h4">Change Password</p>
 
         <form action="" class="change-password form">
@@ -114,14 +245,14 @@
         </form>
 
         <br>
-      </section>
+      </section> -->
 
       <!-- // Create Plant // -->
 
-      <section id="create-plant">
+      <!-- <section id="create-plant">
         <p class="h2">Add New Plant</p>
 
-        <form action="" class="create-plant form"> <!--id="create-plant"-->
+        <form action="" class="create-plant form">
 
           <div class="form-group">
             <label for="nick-name">Nick Name</label>
@@ -159,7 +290,7 @@
 
         <br>
 
-      </section>
+      </section> -->
 
       <main>
         <div id="content" class="content row"></div>
