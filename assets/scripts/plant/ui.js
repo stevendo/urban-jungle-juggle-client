@@ -10,11 +10,11 @@ const indexSuccess = function (data) {
   $('.content').append(showPlantsHtml)
   $('#content').show()
 
-  if (store.plants.length === 0) {
-    $('#message').text('There are no plants to see yet!')
-  } else {
-    $('#message').text('Plant Indexed successfully!')
-  }
+  // if (store.plants.length === 0) {
+  //   $('#message').text('There are no plants to see yet!')
+  // } else {
+  //   $('#message').text('Plant Indexed successfully!')
+  // }
   $('#message').show()
   $('#message').removeClass().addClass('success')
 }

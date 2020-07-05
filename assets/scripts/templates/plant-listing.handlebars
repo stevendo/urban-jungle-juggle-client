@@ -1,24 +1,67 @@
 {{#each plants as |plant|}}
   {{log plant}}
-  <section data-id="{{plant._id}}"> <!--like data index-->
-    <h6>Name:</h6>
-    <h3>
-      {{plant.commonName}}
-    </h3>
-    <h6>Water Requirements:</h6>
-    <p>
-      {{#if plant.waterReq}}
-        {{plant.waterReq}}
-      {{else}}
-        No requirements provided.
-      {{/if}}
-    </p>
-  </section>
+  <div class="card col-4" data-id="{{plant._id}}"> <!--like data index-->
+    <img class="card-img-top" src="/images/pathToYourImage.png" alt="Card image cap">
+    <div class="card-body">
+      <h4 class="card-title">{{plant.nickName}}</h4>
+
+      <h6 class="card-subtitle mb-2 text-muted">Common Name</h6>
+      <p class="card-text">
+        {{#if plant.commonName}}
+          {{plant.commonName}}
+        {{else}}
+          No requirements provided.
+        {{/if}}
+      </p>
+
+      <h6 class="card-subtitle mb-2 text-muted">Species Name</h6>
+      <p class="card-text">
+        {{#if plant.speciesName}}
+          {{plant.speciesName}}
+        {{else}}
+          No requirements provided.
+        {{/if}}
+      </p>
+
+      <h6 class="card-subtitle mb-2 text-muted">Water Requirements</h6>
+      <p class="card-text">
+        {{#if plant.waterReq}}
+          {{plant.waterReq}}
+        {{else}}
+          No requirements provided.
+        {{/if}}
+      </p>
+
+      <h6 class="card-subtitle mb-2 text-muted">Sun Requirements</h6>
+      <p class="card-text">
+        {{#if plant.sunReq}}
+          {{plant.sunReq}}
+        {{else}}
+          No requirements provided.
+        {{/if}}
+      </p>
+
+      <h6 class="card-subtitle mb-2 text-muted">Soil Requirements</h6>
+      <p class="card-text">
+        {{#if plant.soilReq}}
+          {{plant.soilReq}}
+        {{else}}
+          No requirements provided.
+        {{/if}}
+      </p>
+
+    </div>
+  </div>
 
   <section id="update-plant-section" data-id="{{plant._id}}">
     <p class="hr">Update Plant</p>
 
     <form action="" class="update-plant-form form" data-id="{{plant._id}}">
+
+      <div class="form-group">
+        <label for="nick-name">Nick Name</label>
+        <input type="text" placeholder="Nick Name" name="plant[nickName]">
+      </div>
 
       <div class="form-group">
         <label for="common-name">Common Name</label>
@@ -28,11 +71,6 @@
       <div class="form-group">
         <label for="species-name">Species Name</label>
         <input type="text" placeholder="Species Name" name="plant[speciesName]">
-      </div>
-
-      <div class="form-group">
-        <label for="nick-name">Nick Name</label>
-        <input type="text" placeholder="Nick Name" name="plant[nickName]">
       </div>
 
       <div class="form-group">
@@ -50,15 +88,16 @@
         <input type="text" placeholder="Soil Requirements" name="plant[soilReq]">
       </div>
 
-      <button type='submit' class="update-plant">Update</button>
+      <button type='submit' class="update-plant btn btn-primary">Update</button>
+        <button class="btn btn-primary remove-plant" data-id="{{plant._id}}">Delete Plant</button>
 
     </form>
 
-  </section>
+  <!-- </section>
 
-  <section id="delete-plant-section" data-id="{{plant._id}}">
+  <section id="delete-plant-section" data-id="{{plant._id}}"> -->
 
-    <button class="btn btn-primary remove-plant" data-id="{{plant._id}}">Delete Plant</button>
+
 
   </section>
 

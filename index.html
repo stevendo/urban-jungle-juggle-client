@@ -124,6 +124,11 @@
         <form action="" class="create-plant form"> <!--id="create-plant"-->
 
           <div class="form-group">
+            <label for="nick-name">Nick Name</label>
+            <input required type="text" name="plant[nickName]" class="form-control form">
+          </div>
+
+          <div class="form-group">
             <label for="common-name">Common Name</label>
             <input required type="text" name="plant[commonName]" class="form-control form">
           </div>
@@ -131,11 +136,6 @@
           <div class="form-group">
             <label for="species-name">Species Name</label>
             <input required type="text" name="plant[speciesName]" class="form-control form">
-          </div>
-
-          <div class="form-group">
-            <label for="nick-name">Nick Name</label>
-            <input required type="text" name="plant[nickName]" class="form-control form">
           </div>
 
           <div class="form-group">
@@ -162,7 +162,7 @@
       </section>
 
       <main>
-        <div id="content" class="content"></div>
+        <div id="content" class="content row"></div>
       </main>
 
     </body>
