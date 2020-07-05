@@ -46,6 +46,7 @@ const plantUpdateSuccess = function (responseData) {
   $('#message').text('Plant Updated!')
   $('#message').show()
   $('#message').removeClass().addClass('success')
+  $('.modal').modal('hide')
 }
 
 const plantUpdateFailure = function () {
@@ -60,7 +61,10 @@ const plantRemoveSuccess = function (plantId) {
   $('#message').show()
   $('#message').removeClass().addClass('success')
 
+  $('.modal').modal('hide')
+
   $(`[data-id="${plantId}"]`).remove()
+
   // console.log('what is plantId', plantId)
 }
 

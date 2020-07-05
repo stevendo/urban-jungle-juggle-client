@@ -14,14 +14,14 @@
         {{/if}}
       </p>
 
-      <h6 class="card-subtitle mb-2 text-muted">Species Name</h6>
+      <!-- <h6 class="card-subtitle mb-2 text-muted">Species Name</h6>
       <p class="card-text">
         {{#if plant.speciesName}}
           {{plant.speciesName}}
         {{else}}
           No requirements provided.
         {{/if}}
-      </p>
+      </p> -->
 
       <h6 class="card-subtitle mb-2 text-muted">Water Requirements</h6>
       <p class="card-text">
@@ -41,50 +41,113 @@
         {{/if}}
       </p>
 
-      <h6 class="card-subtitle mb-2 text-muted">Soil Requirements</h6>
+      <!-- <h6 class="card-subtitle mb-2 text-muted">Soil Requirements</h6>
       <p class="card-text">
         {{#if plant.soilReq}}
           {{plant.soilReq}}
         {{else}}
           No requirements provided.
         {{/if}}
-      </p>
+      </p> -->
+
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalCentered">
+        Make Changes
+      </button>
+
+      <!-- Modal -->
+      <div class="modal" id="exampleModalCentered" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenteredLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalCenteredLabel">Make Changes to {{plant.nickName}}</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+              <form action="" class="update-plant-form form" data-id="{{plant._id}}">
+
+                <div class="form-group">
+                  <!-- <label for="nick-name">Nick Name</label> -->
+                  <input type="text" placeholder="Nick Name" name="plant[nickName]">
+                </div>
+
+                <div class="form-group">
+                  <!-- <label for="common-name">Common Name</label> -->
+                  <input type="text" placeholder="Common Name" name="plant[commonName]">
+                </div>
+
+                <div class="form-group">
+                  <!-- <label for="species-name">Species Name</label> -->
+                  <input type="text" placeholder="Species Name" name="plant[speciesName]">
+                </div>
+
+                <div class="form-group">
+                  <!-- <label for="water-req">Water Requirements</label> -->
+                  <input type="text" placeholder="Water Requirements" name="plant[waterReq]">
+                </div>
+
+                <div class="form-group">
+                  <!-- <label for="sun-req">Sun Requirements</label> -->
+                  <input type="text" placeholder="Sun Requirements" name="plant[sunReq]">
+                </div>
+
+                <div class="form-group">
+                  <!-- <label for="soil-req">Soil Requirements</label> -->
+                  <input type="text" placeholder="Soil Requirements" name="plant[soilReq]">
+                </div>
+
+                <button type='submit' class="update-plant btn btn-primary">Update</button>
+
+                <button class="btn btn-primary remove-plant" data-id="{{plant._id}}">Delete </button>
+
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+            </div>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>
 
-  <section id="update-plant-section" data-id="{{plant._id}}">
+  <!-- <section id="update-plant-section" data-id="{{plant._id}}">
     <h4 class="card-title">Update Plant</h4>
 
     <form action="" class="update-plant-form form" data-id="{{plant._id}}">
 
       <div class="form-group">
-        <!-- <label for="nick-name">Nick Name</label> -->
+        <label for="nick-name">Nick Name</label>
         <input type="text" placeholder="Nick Name" name="plant[nickName]">
       </div>
 
       <div class="form-group">
-        <!-- <label for="common-name">Common Name</label> -->
+        <label for="common-name">Common Name</label>
         <input type="text" placeholder="Common Name" name="plant[commonName]">
       </div>
 
       <div class="form-group">
-        <!-- <label for="species-name">Species Name</label> -->
+        <label for="species-name">Species Name</label>
         <input type="text" placeholder="Species Name" name="plant[speciesName]">
       </div>
 
       <div class="form-group">
-        <!-- <label for="water-req">Water Requirements</label> -->
+        <label for="water-req">Water Requirements</label>
         <input type="text" placeholder="Water Requirements" name="plant[waterReq]">
       </div>
 
       <div class="form-group">
-        <!-- <label for="sun-req">Sun Requirements</label> -->
+        <label for="sun-req">Sun Requirements</label>
         <input type="text" placeholder="Sun Requirements" name="plant[sunReq]">
       </div>
 
       <div class="form-group">
-        <!-- <label for="soil-req">Soil Requirements</label> -->
+        <label for="soil-req">Soil Requirements</label>
         <input type="text" placeholder="Soil Requirements" name="plant[soilReq]">
       </div>
 
@@ -93,12 +156,6 @@
 
     </form>
 
-  <!-- </section>
-
-  <section id="delete-plant-section" data-id="{{plant._id}}"> -->
-
-
-
-  </section>
+  </section> -->
 
 {{/each}}

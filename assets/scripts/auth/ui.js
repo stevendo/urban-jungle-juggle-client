@@ -3,12 +3,13 @@
 const store = require('./../store')
 // const plant = require('./../plant/events')
 
+$('.navbar-toggler').hide()
 $('.index-plants').hide()
-$('.sign-out').hide()
-$('#change-password').hide()
+// $('.sign-out').hide()
+// $('#change-password').hide()
 
 $('#content').hide()
-$('#create-plant').hide()
+// $('#create-plant').hide()
 
 const createSuccess = function (responseData) {
   $('form').trigger('reset')
@@ -38,14 +39,18 @@ const signInSuccess = function (responseData) {
 
   // store.user = responseData.user
 
+  $('.navbar-toggler').show()
+  $('#navBarMenu').collapse('hide')
+
   $('#sign-up').hide()
   $('#sign-in').hide()
-  $('.sign-out').show()
+
+  // $('.index-plants').show()
 
   $('#change-password').show()
-  $('.index-plants').show()
-
   $('#create-plant').show()
+  $('.sign-out').show()
+
   $('#content').show()
 
   $('#status-message').text('Hello!')
@@ -77,6 +82,8 @@ const signOutSuccess = function (responseData) {
   $('#message').text('Sign Out Successful!')
   $('#message').show()
   $('#message').removeClass().addClass('success')
+
+  $('.navbar-toggler').hide()
 
   $('#sign-up').show()
   $('#sign-in').show()
