@@ -6,7 +6,7 @@ const ui = require('./ui')
 const getFormFields = require('../../../lib/get-form-fields.js')
 
 const onPlantIndex = function (event) {
-  event.preventDefault()
+  // event.preventDefault()
 
   api.plantIndex()
     .then(ui.indexSuccess)
@@ -21,6 +21,7 @@ const onPlantCreate = function (event) {
 
   api.plantCreate(data)
     .then(ui.plantCreateSuccess)
+    .then(() => onPlantIndex(event))
     .catch(ui.plantCreateFailure)
 }
 
@@ -34,6 +35,7 @@ const onPlantUpdate = function (event) {
 
   api.plantUpdate(data, plantId)
     .then(ui.plantUpdateSuccess)
+    .then(() => onPlantIndex(event))
     .catch(ui.plantUpdateFailure)
 }
 
@@ -46,8 +48,6 @@ const onPlantRemove = function (event) {
     .then(() => ui.plantRemoveSuccess(plantId))
     .catch(ui.plantRemoveFailure)
 }
-
-// .then(() => ui.deleteBookSuccess(id))
 
 module.exports = {
   onPlantIndex: onPlantIndex,

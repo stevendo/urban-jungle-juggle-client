@@ -1,7 +1,7 @@
 'use strict'
 
 const store = require('./../store')
-const plant = require('./../plant/events')
+// const plant = require('./../plant/events')
 
 $('.index-plants').hide()
 $('.sign-out').hide()
@@ -35,9 +35,6 @@ const signInSuccess = function (responseData) {
   $('#message').removeClass().addClass('success')
 
   store.user = responseData.user
-
-  // console.log(responseData, 'what is responseData')
-  // plant.onPlantIndex() // show plant index on signin
 
   $('#sign-up').hide()
   $('#sign-in').hide()

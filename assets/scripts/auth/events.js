@@ -14,7 +14,7 @@ const onSignUp = function (event) {
 
   api.signUp(data)
     .then(ui.createSuccess)
-    // .then(onSignIn(data))
+    .then(() => onSignInAuto(data))
     .catch(ui.createFailure)
 }
 
@@ -26,7 +26,15 @@ const onSignIn = function (event) {
 
   api.signIn(data)
     .then(ui.signInSuccess)
-    // .then(plant.onPlantIndex)
+    .then(() => plant.onPlantIndex(event))
+    .catch(ui.signInFailure)
+}
+
+// Auto-sign-in test
+const onSignInAuto = function (data) {
+  api.signIn(data)
+    .then(ui.signInSuccess)
+    .then(() => plant.onPlantIndex(event))
     .catch(ui.signInFailure)
 }
 
@@ -54,6 +62,7 @@ const onSignOut = function (event) {
 
 module.exports = {
   onSignUp: onSignUp,
+  onSignInAuto: onSignInAuto,
   onSignIn: onSignIn,
   onChangePassword: onChangePassword,
   onSignOut: onSignOut
