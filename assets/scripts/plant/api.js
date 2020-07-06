@@ -26,7 +26,8 @@ const plantCreate = function (formData) {
         nickName: formData.plant.nickName,
         waterReq: formData.plant.waterReq,
         sunReq: formData.plant.sunReq,
-        soilReq: formData.plant.soilReq
+        soilReq: formData.plant.soilReq,
+        image: formData.plant.image // change
       }
     }
   })
@@ -56,7 +57,8 @@ const plantUpdate = function (data, plantId) {
         nickName: data.plant.nickName,
         waterReq: data.plant.waterReq,
         sunReq: data.plant.sunReq,
-        soilReq: data.plant.soilReq
+        soilReq: data.plant.soilReq,
+        image: data.plant.image // change
       }
     }
   })

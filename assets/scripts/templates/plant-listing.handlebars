@@ -1,7 +1,12 @@
 {{#each plants as |plant|}}
   {{log plant}}
+
   <div class="card col-4" data-id="{{plant._id}}"> <!--like data index-->
-    <img class="card-img-top" src="https://i.imgur.com/Zs91Rd2.jpg" alt="Card image cap">
+    <img class="card-img-top" src="{{#if plant.image}}
+      {{plant.image}}
+    {{else}}
+      https://i.imgur.com/GG27eTt.jpg
+    {{/if}}" alt="Card image cap">
     <div class="card-body">
       <h4 class="card-title">{{plant.nickName}}</h4>
 
@@ -97,6 +102,11 @@
                 <div class="form-group">
                   <!-- <label for="soil-req">Soil Requirements</label> -->
                   <input type="text" placeholder="Soil Requirements" name="plant[soilReq]">
+                </div>
+
+                <div class="form-group">
+                  <!-- <label for="soil-req">Soil Requirements</label> -->
+                  <input type="text" placeholder="Imgur URL" name="plant[image]">
                 </div>
 
                 <button type='submit' class="update-plant btn btn-primary">Update</button>

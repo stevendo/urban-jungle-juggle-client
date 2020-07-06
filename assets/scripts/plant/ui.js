@@ -17,6 +17,12 @@ const indexSuccess = function (data) {
   // }
   $('#message').show()
   $('#message').removeClass().addClass('success')
+
+  if (store.plants.length === 0) {
+    $('#status-message').text('Hello! Add your first plant!')
+  } else {
+    $('#status-message').text('Hello!')
+  }
 }
 
 const indexFailure = function () {
@@ -31,6 +37,7 @@ const plantCreateSuccess = function (responseData) {
   $('#message').text('Plant created successfully!')
   $('#message').show()
   $('#message').removeClass().addClass('success')
+  $('#status-message').text('Good job!')
 }
 
 const plantCreateFailure = function () {

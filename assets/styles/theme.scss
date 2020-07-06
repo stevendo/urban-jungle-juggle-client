@@ -1,5 +1,5 @@
 body {
-  background: lightblue url("https://images.pexels.com/photos/912413/pexels-photo-912413.jpeg") no-repeat fixed center;
+  background: white url("https://images.pexels.com/photos/912413/pexels-photo-912413.jpeg") no-repeat fixed center;
   background-size: cover;
   // background: $white($info, 50%);
   min-height: 100vh;
@@ -69,3 +69,13 @@ nav {
 .modalForm {
   margin: auto;
 }
+
+// .colCard {
+//   @include make-col-ready;
+//   @include media-breakpoint-up(sm) {
+//     @include make-col(12);
+//   }
+//   @include media-breakpoint-up(md) {
+//     @include make-col(4);
+//   }
+// }
