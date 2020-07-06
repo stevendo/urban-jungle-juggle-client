@@ -1,7 +1,7 @@
 {{#each plants as |plant|}}
   {{log plant}}
 
-  <div class="card col-4" data-id="{{plant._id}}"> <!--like data index-->
+  <div class="card col-sm-12 col-md-4" data-id="{{plant._id}}"> <!--like data index-->
     <img class="card-img-top" src="{{#if plant.image}}
       {{plant.image}}
     {{else}}
