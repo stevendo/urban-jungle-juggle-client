@@ -1,5 +1,7 @@
 body {
-  background: $white($info, 50%);
+  background: lightblue url("https://images.pexels.com/photos/912413/pexels-photo-912413.jpeg") no-repeat fixed center;
+  background-size: cover;
+  // background: $white($info, 50%);
   min-height: 100vh;
   padding: 5rem 0 1rem;
 }

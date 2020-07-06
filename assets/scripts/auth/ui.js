@@ -5,11 +5,11 @@ const store = require('./../store')
 
 $('.navbar-toggler').hide()
 $('.index-plants').hide()
-// $('.sign-out').hide()
-// $('#change-password').hide()
+$('.sign-out').hide()
+$('#change-password').hide()
 
 $('#content').hide()
-// $('#create-plant').hide()
+$('#create-plant').hide()
 
 const createSuccess = function (responseData) {
   $('form').trigger('reset')
