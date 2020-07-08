@@ -33,6 +33,10 @@ main {
 
   .content {
     @include make-row;
+    display: grid;
+    grid-template-columns: repeat( 3, 2fr);
+    grid-column-gap: 15px;
+    margin: 5px;
 
     &:empty {
       &::before {

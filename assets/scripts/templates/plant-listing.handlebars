@@ -1,7 +1,7 @@
 {{#each plants as |plant|}}
-  {{log plant}}
+  <!-- {{log plant}} -->
 
-  <div class="card col-sm-12 col-md-4" data-id="{{plant._id}}"> <!--like data index-->
+  <div class="card" data-id="{{plant._id}}"> <!--like data index-->
     <img class="card-img-top" src="{{#if plant.image}}
       {{plant.image}}
     {{else}}
@@ -56,12 +56,12 @@
       </p> -->
 
       <!-- Button trigger modal -->
-      <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalCentered">
+      <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalCentered{{plant._id}}">
         Make Changes
       </button>
 
       <!-- Modal -->
-      <div class="modal" id="exampleModalCentered" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenteredLabel" aria-hidden="true">
+      <div class="modal" id="exampleModalCentered{{plant._id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenteredLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">

@@ -18,6 +18,7 @@ const onSignUp = function (event) {
     .catch(ui.createFailure)
 }
 
+// This is for regular sign in
 const onSignIn = function (event) {
   event.preventDefault()
 
@@ -30,7 +31,9 @@ const onSignIn = function (event) {
     .catch(ui.signInFailure)
 }
 
-// Auto-sign-in test
+// This is for the auto-sign in
+// 'data' comes for the onSignUp() above
+// big difference exlcusion of event.preventDefault()
 const onSignInAuto = function (data) {
   api.signIn(data)
     .then(ui.signInSuccess)
