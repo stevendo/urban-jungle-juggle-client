@@ -5,7 +5,7 @@ const ui = require('./ui')
 
 const getFormFields = require('../../../lib/get-form-fields.js')
 
-const onPlantIndex = function (event) {
+const onPlantIndex = function () { // had function (event), not sure if necessary
   // event.preventDefault()
 
   api.plantIndex()

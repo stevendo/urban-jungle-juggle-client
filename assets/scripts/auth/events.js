@@ -27,7 +27,7 @@ const onSignIn = function (event) {
 
   api.signIn(data)
     .then(ui.signInSuccess)
-    .then(() => plant.onPlantIndex(event))
+    .then(() => plant.onPlantIndex()) // had onPlantIndex(event), not sure if it broke
     .catch(ui.signInFailure)
 }
 
