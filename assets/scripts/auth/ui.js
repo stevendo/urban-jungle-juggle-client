@@ -97,6 +97,7 @@ const signOutSuccess = function (responseData) {
   $('#content').hide()
 
   $('#status-message').text('Bye!')
+  $('#message').hide()
   store.user = null
 }
 
