@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+      <title>Urban Jungle Juggle</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+
+    <body>
+      <h1>Urban Jungle Juggle</h1>
+      <!-- // Navigation Bar // -->
+      <nav class="navbar navbar-dark bg-dark"> <!--.navbar-expand-xl-->
+        <a href="#" class="navbar-brand"></a> <!--Urban Jungle Juggle could be in nav bar-->
+
+        <button class="navbar-toggler collapse" data-toggle="collapse" data-target="#navBarMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- <div class="collapse navbar-collapse" id="navBarMenu">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a href="#" class="nav-link index-plants">Show Plants</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link sign-out">Sign Out</a>
+            </li>
+          </ul>
+        </div> -->
+
+        <!-- <ul class="nav nav-pills" id="create-plant">
+
+          <li class="nav-item dropdown">
+
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Add Plant</a>
+
+            <div class="dropdown-menu dropdown-menu-left">
+
+              <form action="" class="create-plant form">
+                <div class="form-group">
+                  <label for="nick-name">Nick Name</label>
+                  <input required type="text" name="plant[nickName]" class="form-control form">
+                </div>
+
+                <div class="form-group">
+                  <label for="common-name">Common Name</label>
+                  <input required type="text" name="plant[commonName]" class="form-control form">
+                </div>
+
+                <div class="form-group">
+                  <label for="species-name">Species Name</label>
+                  <input required type="text" name="plant[speciesName]" class="form-control form">
+                </div>
+
+                <div class="form-group">
+                  <label for="water-requirements">Water Requirements</label>
+                <input required type="text" name="plant[waterReq]" class="form-control form">
+                </div>
+
+                <div class="form-group">
+                  <label for="sun-requirements">Sun Requirements</label>
+                  <input required type="text" name="plant[sunReq]" class="form-control form">
+                </div>
+
+                <div class="form-group">
+                  <label for="soil-requirements">Soil Requirements</label>
+                  <input required type="text" name="plant[soilReq]" class="form-control form">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+              </form>
+            </div>
+          </li>
+        </ul> -->
+
+        <div class="collapse navbar-collapse" id="navBarMenu">
+          <ul class="navbar-nav ml-auto">
+
+            <!-- <li class="nav-item">
+              <a href="#" class="nav-link index-plants">Show Plants</a>
+            </li> -->
+
+            <li class="nav-item dropdown" id="create-plant">
+
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Add Plant</a>
+
+              <div class="dropdown-menu dropdown-menu-right">
+
+                <form action="" class="create-plant form">
+                  <div class="form-group">
+                    <label for="nick-name">Nick Name</label>
+                    <input required type="text" name="plant[nickName]" class="form-control form">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="common-name">Common Name</label>
+                    <input required type="text" name="plant[commonName]" class="form-control form">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="species-name">Species Name</label>
+                    <input required type="text" name="plant[speciesName]" class="form-control form">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="water-requirements">Water Requirements</label>
+                  <input required type="text" name="plant[waterReq]" class="form-control form">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="sun-requirements">Sun Requirements</label>
+                    <input required type="text" name="plant[sunReq]" class="form-control form">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="soil-requirements">Soil Requirements</label>
+                    <input required type="text" name="plant[soilReq]" class="form-control form">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="Image">Image URL</label>
+                    <input type="text" name="plant[image]" class="form-control form">
+                  </div>
+
+                  <button type="submit" class="btn btn-primary">Submit</button>
+
+                </form>
+
+              </div>
+
+            </li>
+
+            <li class="nav-item dropdown" id="change-password">
+
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Change Password</a>
+
+              <div class="dropdown-menu dropdown-menu-right">
+
+                <form action="" class="change-password form">
+
+                  <div class="form-group">
+                    <label for="password">Old Password</label>
+                    <input required type="password" name="passwords[old]" class="form-control">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="password">New Password</label>
+                    <input required type="password" name="passwords[new]" class="form-control">
+                  </div>
+
+                  <button type="submit" class="btn btn-primary">Submit</button>
+
+                </form>
+
+              </div>
+
+            </li>
+
+            <li class="nav-item">
+              <a href="#" class="nav-link sign-out">Sign Out</a>
+            </li>
+
+          </ul>
+        </div>
+
+      </nav>
+
+      <!-- // Status Messages // -->
+      <section>
+        <p class='h2' id="status-message"></p>
+        <p class='h2' id="message"></p>
+      </section>
+      <br>
+<div class="row">
+      <!-- // Sign Up // -->
+      <section class="col-sm-12 col-md-6" id="sign-up">
+
+
+        <form action="" class="sign-up form">
+          <p class="h4">Sign Up</p>
+          <div class="form-group">
+            <label for="username">Email</label>
+              <input required type="email" name="credentials[email]" class="form-control">
+            </div>
+
+            <div class="form-group">
+            <label for="password">Password</label>
+              <input required type="password" name="credentials[password]" class="form-control">
+            </div>
+
+            <div class="form-group">
+            <label for="passwordConfirmation">Password Confirmation</label>
+              <input required type="password" name="credentials[password_confirmation]" class="form-control">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <br>
+      </section>
+
+      <!-- // Sign In // -->
+      <section class="col-sm-12 col-md-6" id="sign-in">
+
+
+        <form action="" class="sign-in form">
+          <p class="h4">Sign In</p>
+          <div class="form-group">
+            <label for="username">Email</label>
+              <input required type="email" name="credentials[email]" class="form-control">
+            </div>
+
+            <div class="form-group">
+            <label for="password">Password</label>
+              <input required type="password" name="credentials[password]" class="form-control">
+            </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <br>
+      </section>
+</div>
+      <!-- // Change Password // -->
+
+      <!-- <section id="change-password">
+        <p class="h4">Change Password</p>
+
+        <form action="" class="change-password form">
+
+          <div class="form-group">
+            <label for="password">Old Password</label>
+            <input required type="password" name="passwords[old]" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label for="password">New Password</label>
+            <input required type="password" name="passwords[new]" class="form-control">
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+
+        </form>
+
+        <br>
+      </section> -->
+
+      <!-- // Create Plant // -->
+
+      <!-- <section id="create-plant">
+        <p class="h2">Add New Plant</p>
+
+        <form action="" class="create-plant form">
+
+          <div class="form-group">
+            <label for="nick-name">Nick Name</label>
+            <input required type="text" name="plant[nickName]" class="form-control form">
+          </div>
+
+          <div class="form-group">
+            <label for="common-name">Common Name</label>
+            <input required type="text" name="plant[commonName]" class="form-control form">
+          </div>
+
+          <div class="form-group">
+            <label for="species-name">Species Name</label>
+            <input required type="text" name="plant[speciesName]" class="form-control form">
+          </div>
+
+          <div class="form-group">
+            <label for="water-requirements">Water Requirements</label>
+          <input required type="text" name="plant[waterReq]" class="form-control form">
+          </div>
+
+          <div class="form-group">
+            <label for="sun-requirements">Sun Requirements</label>
+            <input required type="text" name="plant[sunReq]" class="form-control form">
+          </div>
+
+          <div class="form-group">
+            <label for="soil-requirements">Soil Requirements</label>
+            <input required type="text" name="plant[soilReq]" class="form-control form">
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+
+        </form>
+
+        <br>
+
+      </section> -->
+
+      <main>
+        <div id="content" class="content card-columns"></div>
+      </main>
+
+    </body>
+</html>
+
+
+<!-- Drop down menu example -->
+<!-- ====================== -->
+
+  <!-- <div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownmenu" data-toggle="dropdown">
+      my dropdown
+      <span class="caret"></span>
+    </button> -->
+
+      <!-- <div class="dropdown-menu">
+        <form class="px-4 py-3">
+          <div class="form-group">
+            <label for="exampleDropdownFormEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
+          </div>
+          <div class="form-group">
+            <label for="exampleDropdownFormPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="dropdownCheck">
+            <label class="form-check-label" for="dropdownCheck">
+              Remember me
+            </label>
+          </div>
+          <button type="submit" class="btn btn-primary">Sign in</button>
+        </form>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">New around here? Sign up</a>
+        <a class="dropdown-item" href="#">Forgot password?</a>
+      </div> -->
+
+  <!-- </div> -->
+
+<!-- Modal Example -->
+<!-- ============= -->
+
+<!-- <div class="modal fade" id="demoModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Please confirm!</h2>
+        <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <p>This is the modal body, do you like it?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1>Alerts n Modal</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="alert alert-success alert-dissmissable fade show" role="alert">
+          <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;></span></button>
+          <h2 class="alert-heading">This is an alert!</h2>
+            <p>I'm an alert!
+              <a href="" class="alert-link">Click me!</a>
+            </p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#demoModal">Details</button>
+      </div>
+    </div>
+  </div> -->
+
+<!-- Form Example -->
+<!-- ============ -->
+
+<!-- <form action="" class="main-form needs-validation" novalidate>
+  <div class="row">
+    <div class="col">
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" name="firstName" id="firstName" class="form-control is-valid">
+        <div class="invalid-feedback">Looks Good!</div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" name="lastName" id="lastName" class="form-control">
+        <small class="form-text text-muted">
+          This should be your last name.
+        </small>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" name="username" id="username" class="form-control" required>
+    <div class="invalid-feedback">Please enter a valid username.</div>
+  </div>
+
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" class="form-control" >
+  </div>
+
+  <div class="form-group">
+    <label for="gender">Gender</label>
+    <select name="gender" id="gender" class="form-control">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+</div>
+
+  <div class="form-check">
+    <input type="checkbox" id="accept-terms" class="form-check-input">
+    <label for="accept-terms" class="form-check-label">Accept Terms &amp; Conditions</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form> -->
+
+<!-- Old Stuff -->
+<!-- ========= -->
+<!-- current -->
+      <!-- <p id="message"></p>
+            <section>
+              <h3 id="sign-up-banner">Sign Up</h3>
+              <form id="sign-up">
+                <input required type="email" placeholder="E-mail" name="credentials[email]">
+                <input required type="password" placeholder="Password" name="credentials[password]">
+                <input required type="password" placeholder="Password Confirmation" name="credentials[password_confirmation]">
+                <button type="submit">Submit</button>
+              </form>
+            </section>
+
+            <section>
+              <h3 id="sign-in-banner">Sign In</h3>
+              <form id="sign-in">
+                <input required type="email" placeholder="E-mail" name="credentials[email]">
+                <input required type="password" placeholder="Password" name="credentials[password]">
+                <button type="submit">Submit</button>
+              </form>
+            </section>
+
+            <section>
+              <h3 id='change-password-banner'>Change Password</h3>
+              <form id="change-password">
+                <input required type="password" placeholder="Old Password" name="passwords[old]">
+                <input required type="password" placeholder="New Password" name="passwords[new]">
+                <button type="submit">Submit</button>
+              </form>
+            </section> -->
+
+            <!-- <section>
+              <h3 id="sign-out-banner">Sign Out</h3>
+              <br>
+                <button id="sign-out" type="submit">Sign Out</button>
+            </section> -->
+
+      <!-- <section id="create-plant-section">
+        <h3>New Plant</h3>
+        <form id="create-plant">
+          <p>Common Name</p>
+          <input required type="text" placeholder="Common Name" name="plant[commonName]">
+          <p>Species Name</p>
+          <input required type="text" placeholder="Species Name" name="plant[speciesName]">
+          <p>Nick Name</p>
+          <input required type="text" placeholder="Nick Name" name="plant[nickName]">
+          <p>Water Requirements</p>
+          <input required type="text" placeholder="Water Requirements" name="plant[waterReq]">
+          <p>Sun Requirements</p>
+          <input required type="text" placeholder="Sun Requirements" name="plant[sunReq]">
+          <p>Soil Requirements</p>
+          <input required type="text" placeholder="Soil Requirements" name="plant[soilReq]">
+          <button type="submit">Submit</button>
+        </form>
+      </section> -->
